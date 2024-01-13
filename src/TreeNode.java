@@ -1,10 +1,10 @@
 package src;
 
-public class Node {
+public class TreeNode {
     int data;
-    Node left, right;
+    TreeNode left, right;
 
-    Node(int item) {
+    TreeNode(int item) {
         data = item;
         left = right = null;
     }

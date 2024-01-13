@@ -48,10 +48,10 @@ import java.util.Queue;
  */
 
 public class ReverseLevelOrderTraversal {
-    public ArrayList<Integer> reverseLevelOrder(Node root) {// there will always atleast one node in the tree, so in starting root will not null
+    public ArrayList<Integer> reverseLevelOrder(TreeNode root) {// there will always atleast one node in the tree, so in starting root will not null
 
         ArrayList<Integer> list = new ArrayList<>();
-        Queue<Node> queue = new LinkedList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
         queue.offer(null);
 
