@@ -43,13 +43,14 @@ package src.Strings;
 public class FindTheNthCharacter {
     public char nthCharacter(String s, int r, int n){
         int len = s.length();
-        int a = (int)Math.pow(2, r);
-        int start = 0;
-        int end = a-1;
+        int a = (int)Math.pow(2, r); // this is calculating the length of substring in the final string developed form each character
+        int start = 0; // this is the staring index of the range of first string developed from first character of the string
+        int end = a-1; // this is the ending index of the range of first string developed form first character of the string
 
-        for(int i=0; i<len; i++){
-            if(n>=start && n<=end){
-                n-=start;
+        // here the time complexity is O(n)
+        for(int i=0; i<len; i++){// traveling through every character of the string
+            if(n>=start && n<=end){ // as we identify that n belongs to the range of this particular character in the final string
+                n-=start; // updating the index of the range and making that range to index at 0, so we can easily take the reference
                 return recursion(s.charAt(i), r, n);
             }
             start += a;
@@ -59,7 +60,7 @@ public class FindTheNthCharacter {
         return '0';
     }
 
-    public char recursion(char ch, int r, int n){
+    public char recursion(char ch, int r, int n){ // doing in a path recursively, here the time complexity is r-1
         if(r == 1){
             if(ch == '1'){
                 if(n == 0){
